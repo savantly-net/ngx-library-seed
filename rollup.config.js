@@ -17,10 +17,10 @@ const globals = {
 	'rxjs/add/operator/map' : 'Rx'
 };
 
-function cleanName(name) {
+function cleanName(name){
 	var parts = name.split('/');
 	if (parts.length > 1) {
-		return parts[parts.length - 1];
+		return parts[parts.length-1];
 	} else return name;
 }
 
@@ -30,19 +30,14 @@ export default {
 	output : {
 		file : 'dist/' + cleanName(pkg.name) + '.umd.js',
 		format : 'umd',
-		exports : 'named'
+		exports: 'named'
 	},
 	sourcemap : true,
 	name : cleanName(pkg.name),
 	plugins : [
 		resolve(),
 		commonjs(), // so Rollup can convert it to an ES module
-		pkgGen({
-			pkg : {
-				main : 'index.js',
-				module: cleanName(pkg.name) + '.umd.js'
-			}
-		}),
+		pkgGen(),
 	],
 	external : Object.keys(globals),
 	globals : globals

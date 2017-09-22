@@ -28,7 +28,7 @@
 			"dom"
 		],
 		"rootDir": ".",
-		"outDir": "dist"
+		"outDir": "./dist"
 	},
 	"compileOnSave": false,
 	"buildOnSave": false,
@@ -42,5 +42,5 @@
 	"angularCompilerOptions": {
 		"strictMetadataEmit": true,
 		"genDir": "./aot"
-	}
+    }
 }
