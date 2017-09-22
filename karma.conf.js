@@ -1,3 +1,8 @@
+var resolve = require('rollup-plugin-node-resolve-angular');
+var commonjs = require('rollup-plugin-commonjs');
+var angular = require('rollup-plugin-angular');
+var typescript = require('rollup-plugin-typescript2');
+
 var path = require('path');
 
 var ENV = process.env.npm_lifecycle_event;
@@ -38,10 +43,10 @@ module.exports = function (config) {
 		name: 'ngxLibrary',
 		sourcemap: 'inline',
     	plugins: [
-			require('rollup-plugin-node-resolve-angular')({
+			resolve({
 				browser: true
 			}),
-			require('rollup-plugin-commonjs')()
+			commonjs()
 		]
 	},
 	
@@ -53,12 +58,12 @@ module.exports = function (config) {
 			options: {
 				// In this case, to use a different transpiler:
 				plugins: [
-					require('rollup-plugin-angular')(),
-		    		require('rollup-plugin-typescript2')(),
-					require('rollup-plugin-node-resolve-angular')({
+					angular(),
+		    		typescript(),
+					resolve({
 						browser: true
 					}),
-					require('rollup-plugin-commonjs')()
+					commonjs()
 				]
 			}
 		}
