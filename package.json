@@ -24,7 +24,7 @@
     "postinstall": "npm run update-webdriver",
     "posttest": "remap-istanbul -i coverage/json/coverage-final.json -o coverage/html -t html",
     "pretest": "rimraf aot dist && npm run lint",
-    "test": "npm run transpile && karma start",
+    "test": "karma start",
     "test-watch": "karma start --no-single-run --auto-watch",
     "transpile": "ngc -p tsconfig.json",
     "update-webdriver": "webdriver-manager update",
@@ -45,7 +45,7 @@
     "rxjs": "^5.4.3",
     "zone.js": "^0.8.17"
   },
- "devDependencies": {
+  "devDependencies": {
     "@angular/compiler": "^4.4.3",
     "@angular/compiler-cli": "^4.4.3",
     "@angular/platform-browser": "^4.4.3",
@@ -57,7 +57,6 @@
     "core-js": "^2.5.1",
     "jasmine-core": "^2.8.0",
     "jasmine-spec-reporter": "^4.2.1",
-    "jwt-decode": "^2.2.0",
     "karma": "^1.7.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^1.1.1",
@@ -70,8 +69,9 @@
     "remap-istanbul": "^0.9.5",
     "rimraf": "^2.6.2",
     "rollup": "^0.50.0",
+    "rollup-plugin-angular": "^0.5.3",
     "rollup-plugin-commonjs": "^8.2.1",
-    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-node-resolve-angular": "^2.0.3",
     "rollup-plugin-pkg-generator": "^1.1.0",
     "systemjs": "^0.20.19",
     "ts-helpers": "^1.1.2",
